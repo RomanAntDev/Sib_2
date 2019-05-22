@@ -20,5 +20,24 @@ class AddRolesSeeder extends Seeder
             'password' => Hash::make('secret'),
         ]);
         $admin->assignRole('admin');
+
+        $vendor = User::create([
+            'username' => 'vendor1',
+            'fullname' => 'vendor1',
+            'email' => 'vendor1@vendor1.com',
+            'password' => Hash::make('secret'),
+        ]);
+        $vendor->assignRole('vendor');
+
+        $buyer = User::create([
+            'username' => 'buyer1',
+            'fullname' => 'buyer1',
+            'email' => 'buyer1@buyer1.com',
+            'password' => Hash::make('secret'),
+        ]);
+        $buyer->assignRole('buyer');
+
+
+
     }
 }

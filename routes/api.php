@@ -45,3 +45,7 @@ Route::group(['middleware' => ['json.response']], function () {
 });
 
 Route::get('users', 'UsersController@index');
+
+Route::resource('region', 'RegionController', [
+    'except'=> ['edit', 'show', 'destroy']
+]);

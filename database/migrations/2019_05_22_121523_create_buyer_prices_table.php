@@ -14,10 +14,11 @@ class CreateBuyerPricesTable extends Migration
     public function up()
     {
         Schema::create('buyer_prices', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->integer('vendor_id');
             $table->integer('buyer_id');
             $table->integer('region_id');
-            $table->integer('price');
+            $table->integer('price')->default(0);
             $table->timestamps();
         });
     }

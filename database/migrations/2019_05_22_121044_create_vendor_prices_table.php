@@ -14,7 +14,8 @@ class CreateVendorPricesTable extends Migration
     public function up()
     {
         Schema::create('vendor_prices', function (Blueprint $table) {
-            $table->integer('user_id');
+            $table->bigIncrements('id');
+            $table->integer('vendor_id');
             $table->integer('region_id');
             $table->string('price')->default(0);
             $table->timestamps();

@@ -54,6 +54,8 @@ class UsersController extends Controller
     {
         if ($this->user->hasRole('admin')) {
 
+            dd($user);
+
             $this->validateData($request);
 
             User::whereId($user)
@@ -115,7 +117,7 @@ class UsersController extends Controller
      * @param Request $request
      * @return Request
      */
-    public function validateData(Request $request)
+    protected function validateData(Request $request)
     {
 
         $validator = Validator::make($request->all(), [
@@ -130,6 +132,4 @@ class UsersController extends Controller
         }
         return $request;
     }
-
-
 }
